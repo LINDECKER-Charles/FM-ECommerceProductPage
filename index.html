@@ -11,27 +11,110 @@
   <script defer src="./js/script.js"></script>
 </head>
 <body>
+  <header>
+    <a href="#">
+      <img src="./assets/images/logo.svg" alt="Home Sneakers">
+    </a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#">Collections</a></li>
+        <li><a href="#">Men</a></li>
+        <li><a href="#">Women</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="user-actions">
+      <a href="#" aria-label="View cart">
+        <img src="./assets/images/icon-cart.svg" alt="Cart icon">
+      </a>
 
-  Collections
-  Men
-  Women
-  About
-  Contact
+      <a href="/profile" aria-label="User profile">
+        <img src="./assets/images/image-avatar.png" alt="Profile">
+      </a>
+    </div>
+  </header>
+  <main>
+    <section class="product-gallery" aria-label="Product image gallery">
 
-  Sneaker Company
+      <div class="gallery-main" aria-live="polite">
+        <img 
+          src="./assets/images/image-product-1.jpg" 
+          alt="Front view of the sneaker"
+          id="current-image"
+        >
+      </div>
 
-  Fall Limited Edition Sneakers
+      <ul class="gallery-thumbnails" role="list">
+        <li>
+          <button aria-current="true" type="button" aria-label="View front image">
+            <img src="./assets/images/image-product-1-thumbnail.jpg" alt="" loading="lazy">
+          </button>
+        </li>
+        <li>
+          <button type="button" aria-label="View side image">
+            <img src="./assets/images/image-product-2-thumbnail.jpg" alt="" loading="lazy">
+          </button>
+        </li>
+        <li>
+          <button type="button" aria-label="View top image">
+            <img src="./assets/images/image-product-3-thumbnail.jpg" alt="" loading="lazy">
+          </button>
+        </li>
+        <li>
+          <button type="button" aria-label="View sole image">
+            <img src="./assets/images/image-product-4-thumbnail.jpg" alt="" loading="lazy">
+          </button>
+        </li>
+      </ul>
+    </section>
+    <section class="product-details">
 
-  These low-profile sneakers are your perfect casual wear companion. Featuring a 
-  durable rubber outer sole, they’ll withstand everything the weather can offer.
+      <header class="product-header">
+        <p class="product-brand">Sneaker Company</p>
+        <h1 class="product-title">Fall Limited Edition Sneakers</h1>
+      </header>
 
-  $125.00
-  50%
-  $250.00
+      <p class="product-description">
+        These low-profile sneakers are your perfect casual wear companion.
+        Featuring a durable rubber outer sole, they’ll withstand everything
+        the weather can offer.
+      </p>
 
-  0
-  Add to cart
-  
+      <div class="product-pricing">
+        <p class="current-price">
+          <span class="price">$125.00</span>
+          <span class="discount" aria-label="50 percent discount">50%</span>
+        </p>
+        <p class="original-price">
+          <s>$250.00</s>
+        </p>
+      </div>
+
+      <form class="product-actions">
+
+        <div class="quantity-selector">
+          <button type="button" aria-label="Decrease quantity">
+            <img src="./assets/images/icon-minus.svg" alt="">
+          </button>
+
+          <output aria-live="polite">0</output>
+
+          <button type="button" aria-label="Increase quantity">
+            <img src="./assets/images/icon-plus.svg" alt="">
+          </button>
+        </div>
+
+        <button type="submit" class="add-to-cart">
+          <img src="./assets/images/icon-cart.svg" alt="">
+          <span>Add to cart</span>
+        </button>
+
+      </form>
+
+    </section>
+  </main>
+
   <footer class="sr-only text-center text-xs">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" class="text-blue-500">Frontend Mentor</a>. 
     Coded by <a href="https://www.linkedin.com/in/charles-lindecker/" class="text-blue-500">Charles LINDECKER</a>.
