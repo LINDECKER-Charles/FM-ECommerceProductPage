@@ -68,37 +68,47 @@
   <main class="flex flex-col md:flex-row justify-center items-center md:py-18 md:px-32 md:gap-28">
     <section class="product-gallery flex flex-col gap-5" aria-label="Product image gallery">
 
-      <div class="gallery-main w-full" aria-live="polite">
+      <div class="gallery-main w-full relative" aria-live="polite">
+        <button class="absolute left-4 top-1/2 -translate-y-1/2 base-arrow" id="mobile-previous">
+          <img src="./assets/images/icon-previous.svg"
+              class="w-3.5 h-auto"
+              alt="Previous">
+        </button>
         <img 
           src="./assets/images/image-product-1.jpg" 
           alt="Front view of the sneaker"
           id="current-image"
           class="md:rounded-xl"
         >
+        <button class="absolute right-4 top-1/2 -translate-y-1/2 base-arrow" id="mobile-next">
+          <img src="./assets/images/icon-next.svg"
+              class="w-3.5 h-auto"
+              alt="Next">
+        </button>
       </div>
 
       <ul class="gallery-thumbnails hidden md:flex flex-row items-center justify-between w-full" role="list">
         <li>
           <button class="relative" aria-current="true" type="button" aria-label="View front image">
-            <img src="./assets/images/image-product-1-thumbnail.jpg" alt="" loading="lazy" class="selected-img">
+            <img src="./assets/images/image-product-1-thumbnail.jpg" alt="image 1 product" loading="lazy" class="selected-img">
             <div class="absolute inset-0 bg-white/50"></div>
           </button>
         </li>
         <li>
           <button class="relative" type="button" aria-label="View side image">
-            <img src="./assets/images/image-product-2-thumbnail.jpg" alt="" loading="lazy">
+            <img src="./assets/images/image-product-2-thumbnail.jpg" alt="image 2 product" loading="lazy">
             <div class="absolute inset-0 bg-white/50 hidden"></div>
           </button>
         </li>
         <li>
           <button class="relative" type="button" aria-label="View top image">
-            <img src="./assets/images/image-product-3-thumbnail.jpg" alt="" loading="lazy">
+            <img src="./assets/images/image-product-3-thumbnail.jpg" alt="image 3 product" loading="lazy">
             <div class="absolute inset-0 bg-white/50 hidden"></div>
           </button>
         </li>
         <li>
           <button class="relative" type="button" aria-label="View sole image">
-            <img src="./assets/images/image-product-4-thumbnail.jpg" alt="" loading="lazy">
+            <img src="./assets/images/image-product-4-thumbnail.jpg" alt="image 4 product" loading="lazy">
             <div class="absolute inset-0 bg-white/50 hidden"></div>
           </button>
         </li>
@@ -131,13 +141,13 @@
 
         <div class="quantity-selector flex flex-row justify-between items-center bg-light-grayish-blue px-2 py-4 rounded-md w-full md:w-1/3 min-w-42">
           <button type="button" aria-label="Decrease quantity" class="button-quantity" id="decrase">
-            <img src="./assets/images/icon-minus.svg" alt="">
+            <img src="./assets/images/icon-minus.svg" alt="Minus icon">
           </button>
 
           <output aria-live="polite" class="font-bold">0</output>
 
           <button type="button" aria-label="Increase quantity" class="button-quantity" id="add">
-            <img src="./assets/images/icon-plus.svg" alt="">
+            <img src="./assets/images/icon-plus.svg" alt="Plus icon">
           </button>
         </div>
 

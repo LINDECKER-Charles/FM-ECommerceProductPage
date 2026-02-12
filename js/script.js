@@ -78,3 +78,33 @@ function updateCart(){
         cartDisplay.classList.remove("hidden");
     }
 }
+
+/* Mobile Slider */
+const mobileNext = document.querySelector("#mobile-next");
+const mobilePrevious = document.querySelector("#mobile-previous");
+
+const imgsListe = ["image-product-1.jpg", "image-product-2.jpg", "image-product-3.jpg", "image-product-4.jpg"]
+
+let imageIndex = 0;
+
+mobileNext.addEventListener("click", () => {
+    if(imageIndex + 1 >= imgsListe.length){
+        imageIndex = 0;
+    }else{
+        imageIndex++;
+    }
+    updateImg();
+});
+
+mobilePrevious.addEventListener("click", () => {
+    if(imageIndex - 1 < 0){
+        imageIndex = imgsListe.length - 1;
+    }else{
+        imageIndex--;
+    }
+    updateImg();
+});
+
+function updateImg(){
+    mainImg.setAttribute("src", "assets/images/" + imgsListe[imageIndex]);
+}
