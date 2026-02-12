@@ -13,9 +13,14 @@
 <body class="flex flex-col justify-center items-center w-full font-sans">
   <header class="flex flex-row justify-between w-full md:w-5/6 items-center px-4 py-4 md:px-8 md:py-10 md:border-b border-grayish-blue">
     <div class="flex flex-row gap-4 items-center">
-      <figure class=" md:hidden">
-        <img src="./assets/images/icon-menu.svg" alt="">
-        <img src="./assets/images/icon-close.svg" alt="" class="hidden">
+      <figure class="md:hidden relative w-5 h-5 z-10">
+        <img src="./assets/images/icon-menu.svg"
+            id="burger-open"
+            class="absolute inset-0 w-full h-full object-contain transition-all duration-300 ease-in-out cursor-pointer">
+
+        <img src="./assets/images/icon-close.svg"
+            id="burger-close"
+            class="absolute inset-0 w-full h-full object-contain opacity-0 rotate-90 pointer-events-none transition-all duration-300 ease-in-out cursor-pointer">
       </figure>
       <a href="#">
         <img src="./assets/images/logo.svg" alt="Home Sneakers">
@@ -26,7 +31,12 @@
     aria-label="Main navigation">
 
 
-      <ul class="hidden md:flex flex-row gap-8">
+      <ul id="nav-ul"
+    class="fixed top-0 left-0 h-screen w-64 bg-white
+           transform -translate-x-full
+           transition-transform duration-300 ease-in-out
+           flex flex-col gap-6 p-8 mt-10 md:m-0
+           md:static md:translate-x-0 md:h-auto md:w-auto md:flex-row md:p-0">
         <li><a class="nav-link" href="#">Collections</a></li>
         <li><a class="nav-link" href="#">Men</a></li>
         <li><a class="nav-link" href="#">Women</a></li>
