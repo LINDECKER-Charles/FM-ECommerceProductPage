@@ -226,8 +226,14 @@
   .inset-0 {
     inset: calc(var(--spacing) * 0);
   }
+  .-top-2 {
+    top: calc(var(--spacing) * -2);
+  }
   .top-0 {
     top: calc(var(--spacing) * 0);
+  }
+  .-right-2 {
+    right: calc(var(--spacing) * -2);
   }
   .left-0 {
     left: calc(var(--spacing) * 0);
@@ -325,6 +331,9 @@
   .min-w-42 {
     min-width: calc(var(--spacing) * 42);
   }
+  .min-w-\[18px\] {
+    min-width: 18px;
+  }
   .min-w-\[200px\] {
     min-width: 200px;
   }
@@ -418,6 +427,9 @@
   }
   .gap-16 {
     gap: calc(var(--spacing) * 16);
+  }
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
   }
   .rounded-lg {
     border-radius: var(--radius-lg);

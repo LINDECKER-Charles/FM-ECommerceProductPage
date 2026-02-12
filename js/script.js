@@ -18,8 +18,7 @@ burgerMenuClose.addEventListener("click", () => {
 });
 
 /* Slider */
-
-const buttons = document.querySelectorAll("button");
+const buttons = document.querySelectorAll("li > button");
 const mainImg = document.querySelector("#current-image");
 console.log(buttons);
 
@@ -39,3 +38,43 @@ buttons.forEach((button) => {
     });
   });
 });
+
+/* Cart */
+
+const output = document.querySelector("output");
+const addButton = document.querySelector("#add");
+const minusButton = document.querySelector("#decrase");
+
+const sumbit = document.querySelector('[type="submit"]');
+const cartDisplay = document.querySelector("#cart-badge");
+
+console.log(output, sumbit);
+
+let cartTotal = 0;
+let itemTotal = 0;
+
+addButton.addEventListener("click", () => {
+    itemTotal++;
+    output.textContent = itemTotal;
+});
+
+minusButton.addEventListener("click", () => {
+    if(itemTotal > 0){
+        itemTotal--;
+        output.textContent = itemTotal;
+    }
+});
+
+sumbit.addEventListener("click", () => {
+    cartTotal += itemTotal;
+    itemTotal = 0;
+    output.textContent = itemTotal;
+    updateCart();
+});
+
+function updateCart(){
+    cartDisplay.textContent = cartTotal;
+    if(cartTotal > 0){
+        cartDisplay.classList.remove("hidden");
+    }
+}
