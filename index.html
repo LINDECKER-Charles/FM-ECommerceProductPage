@@ -65,7 +65,7 @@
       </a>
     </div>
   </header>
-  <main class="flex flex-col md:flex-row justify-center items-center md:py-18 md:px-32 md:gap-28">
+  <main class="flex flex-col md:flex-row justify-center items-center md:py-18 md:px-32 md:gap-28 relative">
     <section class="product-gallery flex flex-col gap-5" aria-label="Product image gallery">
 
       <div class="gallery-main w-full relative" aria-live="polite">
@@ -78,7 +78,7 @@
           src="./assets/images/image-product-1.jpg" 
           alt="Front view of the sneaker"
           id="current-image"
-          class="md:rounded-xl"
+          class="md:rounded-xl md:hover:cursor-pointer"
         >
         <button class="absolute right-4 top-1/2 -translate-y-1/2 base-arrow" id="mobile-next">
           <img src="./assets/images/icon-next.svg"
@@ -91,29 +91,74 @@
         <li>
           <button class="relative" aria-current="true" type="button" aria-label="View front image">
             <img src="./assets/images/image-product-1-thumbnail.jpg" alt="image 1 product" loading="lazy" class="selected-img">
-            <div class="absolute inset-0 bg-white/50"></div>
           </button>
         </li>
         <li>
           <button class="relative" type="button" aria-label="View side image">
             <img src="./assets/images/image-product-2-thumbnail.jpg" alt="image 2 product" loading="lazy">
-            <div class="absolute inset-0 bg-white/50 hidden"></div>
           </button>
         </li>
         <li>
           <button class="relative" type="button" aria-label="View top image">
             <img src="./assets/images/image-product-3-thumbnail.jpg" alt="image 3 product" loading="lazy">
-            <div class="absolute inset-0 bg-white/50 hidden"></div>
           </button>
         </li>
         <li>
           <button class="relative" type="button" aria-label="View sole image">
             <img src="./assets/images/image-product-4-thumbnail.jpg" alt="image 4 product" loading="lazy">
-            <div class="absolute inset-0 bg-white/50 hidden"></div>
           </button>
         </li>
       </ul>
     </section>
+    <div id="overlay"
+        class="fixed inset-0 bg-black/50 z-40 hidden">
+    </div>
+    <div id="modal" class="absolute w-1/2 flex flex-col gap-4 z-50 hidden">
+      <button class="text-white absolute z-50 -top-8 right-2 hover:cursor-pointer" id="close">
+        <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="CurrentColor" fill-rule="evenodd"/></svg>
+      </button>
+      <div class="gallery-main w-full relative" aria-live="polite">
+        <button class="absolute -left-8 top-1/2 -translate-y-1/2 base-arrow-modal" id="mobile-previous-modal">
+          <img src="./assets/images/icon-previous.svg"
+              class="w-3.5 h-auto"
+              alt="Previous">
+        </button>
+        <img 
+          src="./assets/images/image-product-1.jpg" 
+          alt="Front view of the sneaker"
+          id="current-image-mobile"
+          class="md:rounded-xl"
+        >
+        <button class="absolute -right-8 top-1/2 -translate-y-1/2 base-arrow-modal" id="mobile-next-modal">
+          <img src="./assets/images/icon-next.svg"
+              class="w-3.5 h-auto"
+              alt="Next">
+        </button>
+      </div>
+
+      <ul class="gallery-thumbnails hidden md:flex flex-row items-center justify-between w-full" role="list">
+        <li>
+          <button class="relative" aria-current="true" type="button" aria-label="View front image">
+            <img src="./assets/images/image-product-1-thumbnail.jpg" alt="image 1 product" loading="lazy" class="selected-img">
+          </button>
+        </li>
+        <li>
+          <button class="relative" type="button" aria-label="View side image">
+            <img src="./assets/images/image-product-2-thumbnail.jpg" alt="image 2 product" loading="lazy">
+          </button>
+        </li>
+        <li>
+          <button class="relative" type="button" aria-label="View top image">
+            <img src="./assets/images/image-product-3-thumbnail.jpg" alt="image 3 product" loading="lazy">
+          </button>
+        </li>
+        <li>
+          <button class="relative" type="button" aria-label="View sole image">
+            <img src="./assets/images/image-product-4-thumbnail.jpg" alt="image 4 product" loading="lazy">
+          </button>
+        </li>
+      </ul>
+    </div>
     <section class="product-details text-dark-grayish-blue text-base flex flex-col justify-center items-start gap-5 px-6 pb-10 md:p-0">
 
       <header class="product-header py-6 font-bold">

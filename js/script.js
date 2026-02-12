@@ -20,20 +20,22 @@ burgerMenuClose.addEventListener("click", () => {
 /* Slider */
 const buttons = document.querySelectorAll("li > button");
 const mainImg = document.querySelector("#current-image");
+const mainImgMobile = document.querySelector("#current-image-mobile");
 console.log(buttons);
+
+
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     button.setAttribute("aria-current", "true");
     button.children[0].classList.add("selected-img");
-    button.children[1].classList.remove("hidden");
 
     mainImg.setAttribute("src", button.children[0].getAttribute("src").replace("-thumbnail", ""))
+    mainImgMobile.setAttribute("src", button.children[0].getAttribute("src").replace("-thumbnail", ""))
     buttons.forEach((b) => {
         if(b !== button){
             b.setAttribute("aria-current", "false");
             b.children[0].classList.remove("selected-img");
-            b.children[1].classList.add("hidden");
         }
     });
   });
@@ -82,6 +84,8 @@ function updateCart(){
 /* Mobile Slider */
 const mobileNext = document.querySelector("#mobile-next");
 const mobilePrevious = document.querySelector("#mobile-previous");
+const mobileNextModal = document.querySelector("#mobile-next-modal");
+const mobilePreviousModal = document.querySelector("#mobile-previous-modal");
 
 const imgsListe = ["image-product-1.jpg", "image-product-2.jpg", "image-product-3.jpg", "image-product-4.jpg"]
 
@@ -105,6 +109,43 @@ mobilePrevious.addEventListener("click", () => {
     updateImg();
 });
 
+mobileNextModal.addEventListener("click", () => {
+    if(imageIndex + 1 >= imgsListe.length){
+        imageIndex = 0;
+    }else{
+        imageIndex++;
+    }
+    updateImg();
+});
+
+mobilePreviousModal.addEventListener("click", () => {
+    if(imageIndex - 1 < 0){
+        imageIndex = imgsListe.length - 1;
+    }else{
+        imageIndex--;
+    }
+    updateImg();
+});
+
 function updateImg(){
     mainImg.setAttribute("src", "assets/images/" + imgsListe[imageIndex]);
+    mainImgMobile.setAttribute("src", "assets/images/" + imgsListe[imageIndex]);
 }
+
+/* Ouverture/fermeture du modal */
+
+const closeBtn = document.querySelector("#close");
+const modal = document.querySelector("#modal");
+const overlay = document.querySelector("#overlay");
+
+closeBtn.addEventListener("click", () => {
+    modal.classList.add("hidden");
+    overlay.classList.add("hidden");
+});
+
+mainImg.addEventListener("click", () => {
+    if (window.matchMedia("(min-width: 768px)").matches) {
+        modal.classList.remove("hidden");
+        overlay.classList.remove("hidden");
+    }
+});

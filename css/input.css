@@ -51,7 +51,7 @@
   }
 
   .selected-img {
-    @apply border-2 border-orange;
+    @apply border-2 border-orange brightness-50;
   }
 
   .base-arrow {
@@ -60,6 +60,14 @@
     transition-colors ease-in-out duration-500
     flex items-center justify-center
   bg-white rounded-full shadow-md md:hidden;
+  }
+
+  .base-arrow-modal {
+    @apply w-16 h-16 
+    hover:cursor-pointer hover:bg-pale-orange
+    transition-colors ease-in-out duration-500
+    flex items-center justify-center
+  bg-white rounded-full shadow-md;
   }
 }
 
