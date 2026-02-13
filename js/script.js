@@ -149,3 +149,9 @@ mainImg.addEventListener("click", () => {
         overlay.classList.remove("hidden");
     }
 });
+
+const form = document.querySelector("form");
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault(); // bloque la soumission
+});
