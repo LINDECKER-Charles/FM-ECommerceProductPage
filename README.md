@@ -1,6 +1,6 @@
-# Frontend Mentor - FAQ accordion solution
+# Frontend Mentor - E-commerce product page solution
 
-This is a solution to the [FAQ accordion challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/faq-accordion-wyfFdeBwBz). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [E-commerce product page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Overview
 
@@ -20,8 +20,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution URL](https://github.com/LINDECKER-Charles/FM-FAQAccordion)
-- Live Site URL: [Live site URL](https://fm-faq-accordion-beige.vercel.app)
+- Solution URL: [Solution URL](https://github.com/LINDECKER-Charles/FM-ECommerceProductPage)
+- Live Site URL: [Live site URL](https://fm-e-commerce-product-page-five.vercel.app/)
 
 ## My process
 
